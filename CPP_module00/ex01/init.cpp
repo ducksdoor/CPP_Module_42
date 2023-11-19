@@ -29,6 +29,16 @@ std::string menu(std::string answerd)
 	return (answerd);
 }
 
+void head()
+{
+	std::cout << "\033[0;94m ___________________________________________\033[0m" << std::endl;
+	std::cout << "\033[0;94m|               \033[0;93mold Phonebook\033[0m               \033[0;94m|\033[0m" << std::endl;
+	std::cout << "\033[0;94m|___________________________________________|\033[0m" << std::endl;
+	std::cout << "\033[0;94m|  \033[0;93mIndex   \033[0;94m|   \033[0;93mName   |\033[0;93mLast Name |  \033[0;93mapodo   \033[0;94m|" << std::endl;
+	std::cout << "\033[0;94m|__________|__________|__________|__________|\033[0m" << std::endl;
+}
+
+
 int main ()
 {
 	std::string	answerd;
@@ -36,12 +46,7 @@ int main ()
 
 	while (1)
 	{
-
-		std::cout << " _____________________________________________" << std::endl;
-		std::cout << "|                old Phonebook                |" << std::endl;
-		std::cout << "|_____________________________________________|" << std::endl;
-		std::cout << "|  Index   |    Name    | Last Name|  apodo   |" << std::endl;
-		std::cout << "|__________|____________|__________|__________|" << std::endl;
+		head();
 		std::cout << "What do you want to do? [ADD/1], [SEARCH/2], [EXIT/3]" << std::endl;
 		std::cin >> answerd;
 		answerd = to_upper(answerd);
@@ -59,7 +64,11 @@ int main ()
 			}
 			else if (answerd == "EXIT" || answerd == "3")
 			{
-				std::cout << "bye, bye!" << std::endl;
+				std::cout << "──────▄▄▄ "<< std::endl;
+				std::cout << "────▄▀░▄░▀▄ "<< std::endl;
+				std::cout << "────█░█▄▀░█ "<< std::endl;
+				std::cout << "────█░▀▄▄▀█▄█▄▀ "<< std::endl;
+				std::cout << "───▄▄█▄▄▄▄███▀     bye, bye!" << std::endl;
 				break;
 			}
 			else
