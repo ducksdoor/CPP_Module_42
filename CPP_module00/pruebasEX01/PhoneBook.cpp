@@ -6,7 +6,7 @@ void PhoneBook::addContact()
 	if (num_contacts < MAX_CONTACTS)
 	{
 		Contact newContact("", "", "", "");
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cin.ignore(std:: numeric_limits<std::streamsize>:: max(), '\n');
 
 		std::cout << "Enter the contact details:" ;
 

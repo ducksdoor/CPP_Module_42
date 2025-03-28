@@ -7,7 +7,7 @@ CC = g++
 
 CFLAG = -std=c++98 -Wall -Wextra -pedantic
 
-SOURCES = PhoneBook.cpp Contact.cpp init.cpp
+SOURCES = main.cpp PhoneBook.cpp
 
 OBJECT = $(SOURCES:.cpp=.o)
 
@@ -15,26 +15,33 @@ all: $(NAME)
 
 $(NAME): $(OBJECT)
 	@$(CC) $(CFLAG) $(OBJECT) -o $(NAME)
-	@echo	"     .              .   .'.     \   / "| lolcat
-	@echo	"   \   /      .'. .' '.'   '  -=  o  =- "| lolcat
-	@echo	" -=  o  =-  .'   '              / | \ "| lolcat
-	@echo	"   / | \     is posible           | "| lolcat
-	@echo	"     |         to use:            | "| lolcat
-	@echo	"     |     the old mobile         | "| lolcat
-	@echo	"     |                      .=====| "| lolcat
-	@echo	"     |=====.                |.---.| "| lolcat
-	@echo	"     |.---.|                ||=o=|| "| lolcat
-	@echo	"     ||=o=||                ||   || "| lolcat
-	@echo	"     ||___||                |[:::]| "| lolcat
-	@echo	"     |[:::]|                '-----' "| lolcat
-	@echo	"     '-----' "| lolcat
+	@echo	"     .              .   .'.     \   / "|
+	@echo	"   \   /      .'. .' '.'   '  -=  o  =- "|
+	@echo	" -=  o  =-  .'   '              / | \ "|
+	@echo	"   / | \     is posible           | "|
+	@echo	"     |         to use:            | "|
+	@echo	"     |        PhoneBook           | "|
+	@echo	"     |                      .=====| "|
+	@echo	"     |=====.                |.---.| "|
+	@echo	"     |.---.|                ||=o=|| "|
+	@echo	"     ||=o=||                ||   || "|
+	@echo	"     ||___||                |[:::]| "|
+	@echo	"     |[:::]|                '-----' "|
+	@echo	"     '-----' "|
 
 
 %.o: %.cpp
 	$(CC) $(CFLAG) -c $< -o $@
 
+
 clean:
-	@rm -f $(NAME) $(OBJECT)
+	rm -f $(OBJECT)
 	@echo "\n${GRAY} ◎ $(RED)All objects and executable cleaned successfully${GRAY} ◎$(DEF_COLOR)\n"
 
-re: clean all 
+fclean:			clean
+				$(RM) $(NAME)
+
+re: fclean all 
+
+
+.PHONY:			all clean fclean re test

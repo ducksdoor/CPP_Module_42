@@ -24,7 +24,6 @@ int main (int argc, char *argv[])
 			{
 				std::cout << "\033[1;" << color << "m" << char(toupper(result[x])) << "\033[0m";
 				x++;
-				color = (color % 7) + 31;
 			}
 			x = 0;
 			z++;
