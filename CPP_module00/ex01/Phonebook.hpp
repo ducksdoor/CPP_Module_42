@@ -3,17 +3,23 @@
 
 # include <iostream>
 # include <string>
-//# include "Contact.hpp" 
+# include "Contact.hpp" 
 
-// class PhoneBook 
-// {
-// private:
-//     Contact contacts[8];
-//     int currentIndex = 0;
+class Phonebook
+{
+	private:
+		Contact contacts[8];
+		int currentindex;
 
-// public:
-//     void addContact(const Contact& contact);
-//     void searchContact(int index) const;
-// };
+	public:
+		Phonebook();
+		virtual ~Phonebook();
+		int		change_mode(std::string &input);
+		void	mode_zero(const std::string &name);
+		void	to_uppercase(std::string &str);
+		void	search();
+    //void	addContact(const Contact &contact);
+    //	void searchContact(int index) const;
+};
 
 #endif

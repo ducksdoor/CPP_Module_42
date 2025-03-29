@@ -3,11 +3,11 @@ RED =			\033[0;91m
 
 NAME = phone
 
-CC = g++
+CC = c++
 
 CFLAG = -std=c++98 -Wall -Wextra -pedantic
 
-SOURCES = main.cpp PhoneBook.cpp
+SOURCES = main.cpp Phonebook.cpp Contact.cpp
 
 OBJECT = $(SOURCES:.cpp=.o)
 
@@ -15,19 +15,19 @@ all: $(NAME)
 
 $(NAME): $(OBJECT)
 	@$(CC) $(CFLAG) $(OBJECT) -o $(NAME)
-	@echo	"     .              .   .'.     \   / "|
-	@echo	"   \   /      .'. .' '.'   '  -=  o  =- "|
-	@echo	" -=  o  =-  .'   '              / | \ "|
-	@echo	"   / | \     is posible           | "|
-	@echo	"     |         to use:            | "|
-	@echo	"     |        PhoneBook           | "|
-	@echo	"     |                      .=====| "|
-	@echo	"     |=====.                |.---.| "|
-	@echo	"     |.---.|                ||=o=|| "|
-	@echo	"     ||=o=||                ||   || "|
-	@echo	"     ||___||                |[:::]| "|
-	@echo	"     |[:::]|                '-----' "|
-	@echo	"     '-----' "|
+	@echo	"     .              .   .'.     \   / "
+	@echo	"   \   /      .'. .' '.'   '  -=  o  =- "
+	@echo	" -=  o  =-  .'   '              / | \ "
+	@echo	"   / | \     is posible           | "
+	@echo	"     |         to use:            | "
+	@echo	"     |        PhoneBook           | "
+	@echo	"     |                      .=====| "
+	@echo	"     |=====.                |.---.| "
+	@echo	"     |.---.|                ||=o=|| "
+	@echo	"     ||=o=||                ||   || "
+	@echo	"     ||___||                |[:::]| "
+	@echo	"     |[:::]|                '-----' "
+	@echo	"     '-----' "
 
 
 %.o: %.cpp

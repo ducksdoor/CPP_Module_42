@@ -7,7 +7,7 @@ GREEN =			\033[0;92m
 
 NAME = megaphone
 
-CC = g++
+CC = c++
 
 CFLAG = -std=c++98 -Wall -Wextra -pedantic
 
