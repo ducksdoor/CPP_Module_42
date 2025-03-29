@@ -13,13 +13,14 @@ private:
 	std::string nickname;
 	std::string phoneNumber;
 	std::string secret;
-
+//	std::string format_string(std::string work);
 	
 public:
 
 	void little_see();
 	Contact() : index(0) {}
-    Contact(int x) : index(x) {
+    Contact(int x) : index(x) 
+	{
         std::cout << "Created with index " << index << std::endl;
     }
 

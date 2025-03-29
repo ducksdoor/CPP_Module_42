@@ -1,5 +1,7 @@
+DEF_COLOR =		\033[0;39m
 GRAY =			\033[0;90m
 RED =			\033[0;91m
+YELLOW =		\033[0;93m
 
 NAME = phone
 
@@ -15,11 +17,11 @@ all: $(NAME)
 
 $(NAME): $(OBJECT)
 	@$(CC) $(CFLAG) $(OBJECT) -o $(NAME)
-	@echo	"     .              .   .'.     \   / "
-	@echo	"   \   /      .'. .' '.'   '  -=  o  =- "
-	@echo	" -=  o  =-  .'   '              / | \ "
-	@echo	"   / | \     is posible           | "
-	@echo	"     |         to use:            | "
+	@echo	" ${YELLOW}    .  $(DEF_COLOR)            .   .'.  ${YELLOW}   \   / $(DEF_COLOR)"
+	@echo	" ${YELLOW}  \   / $(DEF_COLOR)     .'. .' '.'   ' ${YELLOW} -=  o  =- $(DEF_COLOR)"
+	@echo	" ${YELLOW}-=  o  =-$(DEF_COLOR)  .'   '           ${YELLOW}   / | \ $(DEF_COLOR)"
+	@echo	" ${YELLOW}  / | \ $(DEF_COLOR)    is posible      ${YELLOW}     | $(DEF_COLOR)"
+	@echo	" ${YELLOW}    |  $(DEF_COLOR)       to use:            | "
 	@echo	"     |        PhoneBook           | "
 	@echo	"     |                      .=====| "
 	@echo	"     |=====.                |.---.| "

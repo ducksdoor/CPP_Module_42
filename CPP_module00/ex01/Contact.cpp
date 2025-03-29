@@ -1,5 +1,7 @@
 
 #include "Contact.hpp"
+#include <string>
+#include <iostream> 
 
 // Contact(int x) : index(x)
 // {
@@ -9,9 +11,19 @@
 
 void Contact::little_see()
 {
-	std::cout << "none name" << std::endl;
-	std::cout << "none lastname" << std::endl;
-	std::cout << "none nick" << std::endl;
-	std::cout << "none phone" << std::endl;
-	std::cout << "none secret" << std::endl;
+	std::cout << "+------------------------------------------------+" << std::endl;
+	std::cout << "         " << index << "|";
+	std::cout << "none name | " ;
+	std::cout << "none lastname | " ;
+	std::cout << "none nick | " << std::endl;
+	//std::cout << "none phone" << std::endl;
+	//std::cout << "none secret" << std::endl;
 }
+
+// std::string format_string(std::string work)
+// {
+// 	std::string	result[10];
+
+// 	std::string result = "         ";
+// 	return (result[10]);
+// }
