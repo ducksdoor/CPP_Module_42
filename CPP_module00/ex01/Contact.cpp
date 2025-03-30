@@ -1,29 +1,22 @@
 
 #include "Contact.hpp"
 #include <string>
+#include <iomanip>
 #include <iostream> 
+#include <cstddef>
 
-// Contact(int x) : index(x)
-// {
-// 	index = x;
-// 	std::cout <<"created with index " << x << std::endl;
-// }
+std::string truncate_and_add_dot(const std::string& str, size_t max_len) {
+    if (str.length() > max_len) {
+        return str.substr(0, max_len - 1) + ".";
+    }
+    return str;
+}
 
 void Contact::little_see()
 {
-	std::cout << "+------------------------------------------------+" << std::endl;
-	std::cout << "         " << index << "|";
-	std::cout << "none name | " ;
-	std::cout << "none lastname | " ;
-	std::cout << "none nick | " << std::endl;
-	//std::cout << "none phone" << std::endl;
-	//std::cout << "none secret" << std::endl;
+	std::cout << "+        " << index << "|";
+	std::cout << std::setw(10) << std::right << truncate_and_add_dot(name, 10) << "|";
+	std::cout << std::setw(10) << std::right << truncate_and_add_dot(lastname, 10) << "|";
+	std::cout << std::setw(10) << std::right << truncate_and_add_dot(nickname, 10) << "|" ;
+	std::cout <<	"     +"<< std::endl;
 }
-
-// std::string format_string(std::string work)
-// {
-// 	std::string	result[10];
-
-// 	std::string result = "         ";
-// 	return (result[10]);
-// }

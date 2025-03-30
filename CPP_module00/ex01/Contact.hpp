@@ -7,23 +7,20 @@
 class Contact 
 {
 private:
+//	std::string format_string(std::string work);
+	
+public:
 	int	index;
 	std::string name;
 	std::string lastname;
 	std::string nickname;
-	std::string phoneNumber;
+	std::string phonenumber;
 	std::string secret;
-//	std::string format_string(std::string work);
-	
-public:
-
 	void little_see();
-	Contact() : index(0) {}
-    Contact(int x) : index(x) 
-	{
-        std::cout << "Created with index " << index << std::endl;
-    }
-
+    Contact() : index (), name (""), lastname (""), nickname (""),
+		phonenumber (""),
+		secret ("")
+	{}
 };
 
 #endif

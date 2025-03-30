@@ -12,24 +12,25 @@ int main(void)
 	mode = 0;
 	while (true)
 	{
-		if (mode == 1)
-		{
-			std::cout << "modo 1 NO IMPLEMENTADO" << std::endl;
-		}	
-		if (mode == 2)
-		{
-			phonebook.search();
-			std::cout << std::endl;
-		}	
-		mode = 0;
-		if (mode == 0)
-			phonebook.mode_zero(name);
+		phonebook.mode_zero(name);
 		std::getline(std::cin, input);
-		mode = phonebook.change_mode(input);
 		if (input == "EXIT" || input == "3")
 		{
 			std::cout << "		so, sad...but goodbye" << std::endl;
 			break;
+		}
+		mode = phonebook.change_mode(input);
+		if (mode == 1)
+		{
+			phonebook.add_user();
+			std::cout << std::endl;
+			mode = 0;
+		}
+		else if (mode == 2)
+		{
+			phonebook.search();
+			std::cout << std::endl;
+			mode = 0;
 		}
 	}
 	return 0;

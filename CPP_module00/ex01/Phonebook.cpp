@@ -1,19 +1,19 @@
 
 #include "Phonebook.hpp"
-#include "Contact.hpp"
+
 
 
 Phonebook::Phonebook()
 {
+	currentindex = 0;
 	int x;
 
 	x = 0;
-	while (x < 8)
+	while (x < 9)
 	{
-		contacts[x] = Contact(x);
+		Contact contacts[x];
 		x++;
 	}
-	currentindex = 0;
 }
 
 Phonebook::~Phonebook()
@@ -51,24 +51,68 @@ void Phonebook::mode_zero(const std::string &name)
 	std::cout << "+------------------------------------------------+" << std::endl;
 }
 
+
+bool get_valid_input(std::string& input)
+{
+	std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "Invalid input, please enter a value: ";
+		return false;
+	}
+    return true;
+}
+
+
+void	Phonebook::add_user()
+{
+	if (currentindex < 9)
+	{
+		contacts[currentindex].index = currentindex;
+		std::cout << "Enter name: ";
+		while (!get_valid_input(contacts[currentindex].name)) {}
+		std::cout << "Enter lastname: ";
+		while (!get_valid_input(contacts[currentindex].lastname)) {}
+		std::cout << "Enter nickname: ";
+		while (!get_valid_input(contacts[currentindex].nickname)) {}
+		std::cout << "Enter phone number: ";
+		while (!get_valid_input(contacts[currentindex].phonenumber)) {}
+		std::cout << "Enter secret: ";
+        while (!get_valid_input(contacts[currentindex].secret)) {}
+		currentindex++;
+	}
+	else 
+		std::cout << "aun no esta programada la reasignacion... " << std::endl;
+
+}
+
 void	Phonebook::search()
 {
 	int	x;
+	int max;
 	std::string	input;
 
 	x = 0;
+	max = 0;
+	std::cout << "+------------------------------------------------+" << std::endl;
+	std::cout << "+   indice|      name|  lastname|  nickname|     +" << std::endl;
 	while(x < 8)
 	{
-		contacts[x].little_see();
+		if (contacts[x].name != "")
+			contacts[x].little_see();
 		x++;
+		max++;
 	}
-	while(1)
+	std::cout << "+------------------------------------------------+" << std::endl;
+	while(true)
 	{
-		std::cout << "+------------------------------------------------+" << std::endl;
+		std::cout << std::endl << "+------------------------------------------------+" << std::endl;
 		std::cout << "|     Select contact [0-8] or go back [9]        |" << std::endl;
 		std::cout << "+------------------------------------------------+" << std::endl;
 		std::getline(std::cin, input);
 		if (input == "9")
 			break;
+		else
+			std::cout << "aun no esta programada la busqueda espedifica " << std::endl;
 	}
 }
