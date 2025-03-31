@@ -22,7 +22,7 @@ Se trata de una bateria de ejercicios propuesta en la academia de programación 
 	./Megaphone solo tiene que imprimir una cosa en concreto.
 	./Megaphone con argumentos tiene que imprimir los argumentos.
 
-### ex00 PhoneBook
+### ex01 PhoneBook
 	Un poco mas complicado, se trata de hacer una especie de agenda telefonica:
 	
 	- Hay que implementar dos clases:
@@ -59,7 +59,8 @@ Se trata de una bateria de ejercicios propuesta en la academia de programación 
 			->El programa se cierra y se pierden os contactos
 		->cualquier otra entrada se ignora
 		->despues de cada comando se vuelve a esperar otro
-		->dale un nombre relevante al archivo
+		->dale un nombre relevante al archivo.
 
+# 2 CPP_module01
 
 

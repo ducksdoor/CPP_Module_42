@@ -1,19 +1,13 @@
 
 #include "Phonebook.hpp"
-
+#include <cstdlib>
 
 
 Phonebook::Phonebook()
 {
 	currentindex = 0;
-	int x;
+	Contact contacts[9];
 
-	x = 0;
-	while (x < 9)
-	{
-		Contact contacts[x];
-		x++;
-	}
 }
 
 Phonebook::~Phonebook()
@@ -52,7 +46,7 @@ void Phonebook::mode_zero(const std::string &name)
 }
 
 
-bool get_valid_input(std::string& input)
+bool Phonebook::get_valid_input(std::string& input)
 {
 	std::getline(std::cin, input);
 	if (input.empty())
@@ -62,7 +56,6 @@ bool get_valid_input(std::string& input)
 	}
     return true;
 }
-
 
 void	Phonebook::add_user()
 {
@@ -80,23 +73,26 @@ void	Phonebook::add_user()
 		std::cout << "Enter secret: ";
         while (!get_valid_input(contacts[currentindex].secret)) {}
 		currentindex++;
+		std::cout << "+------------------------------------------------+" << std::endl;
+		std::cout << "+            ADD contact sucesfull:              *" << std::endl;
+		std::cout << "+------------------------------------------------+" << std::endl;
+		if (currentindex == 9)
+			currentindex = 0;
 	}
-	else 
-		std::cout << "aun no esta programada la reasignacion... " << std::endl;
-
 }
 
 void	Phonebook::search()
 {
 	int	x;
 	int max;
+	int	n_input;
 	std::string	input;
 
 	x = 0;
 	max = 0;
 	std::cout << "+------------------------------------------------+" << std::endl;
 	std::cout << "+   indice|      name|  lastname|  nickname|     +" << std::endl;
-	while(x < 8)
+	while(x < 9)
 	{
 		if (contacts[x].name != "")
 			contacts[x].little_see();
@@ -113,6 +109,34 @@ void	Phonebook::search()
 		if (input == "9")
 			break;
 		else
-			std::cout << "aun no esta programada la busqueda espedifica " << std::endl;
+		{
+			x = 0;
+			n_input = atoi(input.c_str());
+			while (input[x] != '\0')
+			{
+				if (!std::isdigit(input[x]))
+				{
+					std::cout << "+               input invalid        +" << std::endl;
+					n_input = -1;
+					break;
+				}
+				x++;
+			}
+			if (n_input >= 0 && n_input <= 9)
+			{
+				if (contacts[n_input].name != "\0")
+				{
+					std::cout << "+ Name: " << contacts[n_input].name << std::endl;
+					std::cout << "+ Lastname: " << contacts[n_input].lastname << std::endl;
+					std::cout << "+ Nickname: " << contacts[n_input].nickname << std::endl;
+					std::cout << "+ Phone number: " << contacts[n_input].phonenumber << std::endl;
+					std::cout << "+ Secret: " << contacts[n_input].secret << std::endl;
+				}
+				else
+					std::cout << "No exist the contact." << std::endl;
+			}
+			else
+				std::cout << "Dont understand you.... " << std::endl;
+		}
 	}
 }

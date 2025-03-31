@@ -3,24 +3,25 @@
 
 # include <iostream>
 # include <string>
+# include <csignal>
 # include "Contact.hpp" 
 
 class Phonebook
 {
 	private:
-		Contact contacts[9];
 		int currentindex;
+		Contact contacts[9];
 
 	public:
 		Phonebook();
-		virtual ~Phonebook();
 		int		change_mode(std::string &input);
+		virtual ~Phonebook();
 		void	mode_zero(const std::string &name);
 		void	to_uppercase(std::string &str);
 		void	add_user();
 		void	search();
-    //void	addContact(const Contact &contact);
-    //	void searchContact(int index) const;
+		bool	get_valid_input(std::string& input);
+
 };
 
 #endif

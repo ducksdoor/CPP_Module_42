@@ -7,7 +7,6 @@
 class Contact 
 {
 private:
-//	std::string format_string(std::string work);
 	
 public:
 	int	index;
@@ -16,7 +15,8 @@ public:
 	std::string nickname;
 	std::string phonenumber;
 	std::string secret;
-	void little_see();
+	std::string	truncate_and_add_dot(const std::string& str, size_t max_len);
+	void		little_see();
     Contact() : index (), name (""), lastname (""), nickname (""),
 		phonenumber (""),
 		secret ("")

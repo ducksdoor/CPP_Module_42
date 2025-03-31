@@ -1,8 +1,15 @@
 
 #include "Phonebook.hpp"
 
+static void ignore_signal(int signal)
+{
+	(void)signal;
+	std::cout << std::endl  << "SIGINT recibed(Ctrl+C)...   ok..." << std::endl;
+}
+
 int main(void)
 {
+	signal(SIGINT, ignore_signal);
 	Phonebook phonebook;
 	std::string	input;
 	int			mode;
