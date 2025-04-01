@@ -10,7 +10,7 @@ CC = c++
 
 CFLAG = -std=c++98 -Wall -Wextra -pedantic
 
-SOURCES = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
+SOURCES = Zombie.cpp main.cpp zombieHorde.cpp
 
 OBJECT = $(SOURCES:.cpp=.o)
 
@@ -18,7 +18,7 @@ all: $(NAME)
 
 $(NAME): $(OBJECT)
 	@$(CC) $(CFLAG) $(OBJECT) -o $(NAME)
-	@echo "${GREEN}⠀⠀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡤⠴⠖⠒⠒⠒⢒⠒⠶⠤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+	@echo "${RED}⠀⠀⠀⠀⠀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡤⠴⠖⠒⠒⠒⢒⠒⠶⠤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
 	@echo "⠀⠀⢀⣴⠻⣉⢏⣽⣿⣗⣦⠀⠀⢀⡶⠞⠋⠅⠐⠀⢀⠐⠠⠈⠄⠌⠠⢡⢀⠊⠝⡲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
 	@echo "⠀⢠⡿⣼⣣⣼⣿⣿⣿⣿⢳⣝⡷⢋⠄⠈⢀⠄⠈⡀⠂⠌⠠⣑⣈⣄⠃⠢⢌⢸⡶⣥⣊⠽⣦⡀⠀⠀⠀⠀⣀⣠⣤⣀⡀⠀⠀⠀⠀"
 	@echo "⠀⣸⣳⢹⣿⣿⣿⡿⡿⠓⣠⠏⡀⠁⠀⡀⠡⢀⠂⠄⡡⢈⡾⠙⢿⣿⣮⡵⣈⢹⣀⣿⣿⡖⣌⢻⡄⡠⢖⠋⠣⢈⣀⢈⡩⢓⢄⠀⠀"

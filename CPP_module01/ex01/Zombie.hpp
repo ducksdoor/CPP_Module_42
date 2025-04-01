@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/01 13:56:07 by lortega-          #+#    #+#             */
-/*   Updated: 2025/04/01 13:56:09 by lortega-         ###   ########.fr       */
+/*   Created: 2025/04/01 13:56:17 by lortega-          #+#    #+#             */
+/*   Updated: 2025/04/01 13:56:19 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie::Zombie(std::string strname)
+class Zombie
 {
-	this->name = strname;
-}
+	private:
+		std::string name;
 
-Zombie::~Zombie()
-{
-	std::cout << "\033[34m" << this->name << "\033[0m" << ": "
-	<< "\033[90mdead\033[0m" << std::endl;
-}
+	public:
+		Zombie();
+		~Zombie();
 
-void Zombie::announce(void)
-{
-	std::cout << "\033[34m" << this->name << "\033[0m" << ": "
-	<< "\033[90mBraiiiiiiinnnzzzZ...\033[0m" << std::endl;
-}
+		void setName(std::string strname);
+		void announce(void);
+		static Zombie* zombieHorde(int N, std::string name );
+};
+
+#endif

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/01 13:56:07 by lortega-          #+#    #+#             */
-/*   Updated: 2025/04/01 13:56:09 by lortega-         ###   ########.fr       */
+/*   Created: 2025/04/01 15:15:56 by lortega-          #+#    #+#             */
+/*   Updated: 2025/04/01 15:16:00 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string strname)
+Zombie* Zombie::zombieHorde( int N, std::string strname)
 {
-	this->name = strname;
-}
+	int	x;
+	x = 0;
+	Zombie *zombie = new Zombie[N];
 
-Zombie::~Zombie()
-{
-	std::cout << "\033[34m" << this->name << "\033[0m" << ": "
-	<< "\033[90mdead\033[0m" << std::endl;
-}
 
-void Zombie::announce(void)
-{
-	std::cout << "\033[34m" << this->name << "\033[0m" << ": "
-	<< "\033[90mBraiiiiiiinnnzzzZ...\033[0m" << std::endl;
+	while (x < N)
+	{
+		zombie[x].setName(strname);
+		x++;
+	}
+	return (zombie);
 }

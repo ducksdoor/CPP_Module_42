@@ -13,9 +13,9 @@
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string strname)
+Zombie::Zombie()
 {
-	this->name = strname;
+
 }
 
 Zombie::~Zombie()
@@ -28,4 +28,9 @@ void Zombie::announce(void)
 {
 	std::cout << "\033[34m" << this->name << "\033[0m" << ": "
 	<< "\033[90mBraiiiiiiinnnzzzZ...\033[0m" << std::endl;
+}
+
+void Zombie::setName(std::string strname)
+{
+	this->name = strname;
 }
