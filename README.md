@@ -70,6 +70,29 @@ Crearemos ahora clases que si tendremos que dar memoria dinamica...
 	creamos un clase zombie:
 		-> Tendra un atributo privado que se llame nombre
 		-> los zombies se anuncian con: nombre: BraiiiiiiinnnzzzZ...
+### ex01
+	Hay que hacer una función que cree una "horda" de zombies
+	El subject te invita a que hagas tus propias pruebas/test
+### ex02
+	Escribe un programa que contenga:
+
+	->Una variable de tipo cadena (string) inicializada con "HI THIS IS BRAIN".
+	->stringPTR: un puntero a la cadena:
+		-> Un puntero a una cadena es simplemente una variable que almacena la dirección de memoria donde se encuentra la cadena. En C++, puedes crear un puntero a una cadena utilizando el operador &.
+	->stringREF: una referencia a la cadena.
+		-> Una referencia en C++ es simplemente un alias de una variable existente. En el caso de una cadena, una referencia te permite acceder a la cadena sin necesidad de usar un puntero.
+
+	Tu programa debe imprimir:
+	->La dirección de memoria de la variable de cadena.
+	->La dirección de memoria almacenada en stringPTR.
+	->La dirección de memoria almacenada en stringREF.
+
+	Y luego:
+	->El valor de la variable de cadena.
+	->El valor al que apunta stringPTR.
+	->El valor al que apunta stringREF.
+
+Con este ejemplo, puedes ver cómo usar tanto punteros como referencias para manipular cadenas en C++. 
 
 		
 
