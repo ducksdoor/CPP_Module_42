@@ -92,7 +92,17 @@ Crearemos ahora clases que si tendremos que dar memoria dinamica...
 	->El valor al que apunta stringPTR.
 	->El valor al que apunta stringREF.
 
-Con este ejemplo, puedes ver cómo usar tanto punteros como referencias para manipular cadenas en C++. 
+	Con este ejemplo, puedes ver cómo usar tanto punteros como referencias para manipular cadenas en C++.
+### ex03
+	volvemos con los zombies, ahora implementaremos la 
+	->clase Weapon
+		->atributo privado ->type (cadena de texto)
+		->funcion getType() ->devuelve referencia a type
+		->funcion setType() ->establece type utilizando un nuevo valor
+	->clase HumanA y HumanB con un weapon y un name 
+		->funcion attack() --> <name> ataca con su <tipo de arma>
+	HumanA recibe siempre el Weapon en el constructor 
+	HumanB puede no tener siempre un arma 
 
 		
 

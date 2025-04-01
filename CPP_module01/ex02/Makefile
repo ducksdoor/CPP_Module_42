@@ -3,15 +3,14 @@ GRAY =			\033[0;90m
 RED =			\033[0;91m
 YELLOW =		\033[0;93m
 GREEN =			\033[0;92m
-BLUE =          \033[0;94m
 
-NAME = human
+NAME = data
 
 CC = c++
 
 CFLAG = -std=c++98 -Wall -Wextra -pedantic
 
-SOURCES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SOURCES = main.cpp
 
 OBJECT = $(SOURCES:.cpp=.o)
 
@@ -19,15 +18,17 @@ all: $(NAME)
 
 $(NAME): $(OBJECT)
 	@$(CC) $(CFLAG) $(OBJECT) -o $(NAME)
-	@echo "${BLUE}     ----."
-	@echo '    "   _}'
-	@echo '    "@   >'
-	@echo '    |\   7'
-	@echo '    / `-- _         ,-------,****'
-	@echo ' ~    >o<  \---------o{___\}-'
-	@echo "/  |  \  /  ________/8\\'"
-	@echo '|  |       /         "'
-	@echo '|  /      |'
+	@echo "${YELLOW}                  /^\   / -- )"
+	@echo "                 / | \\ (____/"
+	@echo "                / | | \\ / /"
+	@echo "               /_|_|_|_/ /"
+	@echo "                |     / /"
+	@echo " __    __    __ |    / /__    __    __"
+	@echo "[  ]__[  ]__[  ].   / /[  ]__[  ]__[  ]"
+	@echo "|__            ____/ /___           __|"
+	@echo "   |          / .------  )         |"
+	@echo "   |         / /        /          |"
+	@echo "   |        / /        /           |"
 
 
 %.o: %.cpp
