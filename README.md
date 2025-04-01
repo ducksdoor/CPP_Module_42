@@ -103,6 +103,10 @@ Crearemos ahora clases que si tendremos que dar memoria dinamica...
 		->funcion attack() --> <name> ataca con su <tipo de arma>
 	HumanA recibe siempre el Weapon en el constructor 
 	HumanB puede no tener siempre un arma 
-
+### ex04
+	Crea un programa que reciba tres parámetros en el siguiente orden: un nombre de archivo y dos cadenas de texto, s1 y s2.
+	Se abrira el archivo se copia en un nuevo archivo llamada nombredado.replace y reemplaza cada s1 por s2
+### ex05
+	
 		
 
