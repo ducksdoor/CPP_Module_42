@@ -15,7 +15,8 @@ Estos proyectos tampoco son lo mas entretenido del mundo, es volver a aprender u
 # 2 CPP_module00
 
 Se trata de una bateria de ejercicios propuesta en la academia de programación 42.
-	Subire por aquí todos los ejercicios resueltos como alguna que otra cosa que haga para aprender como se trabaja en c++.
+En estos dos ejercicios la idea al menos por lo que he entendido es no usar memoria dinamica
+	Subire por aquí mi trabajo
 
 ### ex00 Megaphone
 	Muy simple, solo hay que replicar un programa que imprima lo que dice el subject, a tener en cuenta:
@@ -63,4 +64,12 @@ Se trata de una bateria de ejercicios propuesta en la academia de programación 
 
 # 2 CPP_module01
 
+Crearemos ahora clases que si tendremos que dar memoria dinamica...
+
+### ex00
+	creamos un clase zombie:
+		-> Tendra un atributo privado que se llame nombre
+		-> los zombies se anuncian con: nombre: BraiiiiiiinnnzzzZ...
+
+		
 

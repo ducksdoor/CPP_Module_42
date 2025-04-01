@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lortega- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/01 13:53:24 by lortega-          #+#    #+#             */
+/*   Updated: 2025/04/01 13:53:26 by lortega-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "Phonebook.hpp"
+
+#include "PhoneBook.hpp"
 
 static void ignore_signal(int signal)
 {
@@ -10,7 +22,7 @@ static void ignore_signal(int signal)
 int main(void)
 {
 	signal(SIGINT, ignore_signal);
-	Phonebook phonebook;
+	PhoneBook phonebook;
 	std::string	input;
 	int			mode;
 	std::string	name;

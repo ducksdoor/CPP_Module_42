@@ -9,7 +9,7 @@ CC = c++
 
 CFLAG = -std=c++98 -Wall -Wextra -pedantic
 
-SOURCES = main.cpp Phonebook.cpp Contact.cpp
+SOURCES = main.cpp PhoneBook.cpp Contact.cpp
 
 OBJECT = $(SOURCES:.cpp=.o)
 

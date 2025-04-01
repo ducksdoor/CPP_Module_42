@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lortega- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/01 13:52:42 by lortega-          #+#    #+#             */
+/*   Updated: 2025/04/01 13:52:44 by lortega-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <iostream>
 
@@ -5,7 +17,6 @@ int main (int argc, char *argv[])
 {
 	int	x;
 	int z;
-	int color = 31;
 
 	x = 0;
 	z = 1;
@@ -22,7 +33,7 @@ int main (int argc, char *argv[])
 			result = argv[z];
 			while(result[x])
 			{
-				std::cout << "\033[1;" << color << "m" << char(toupper(result[x])) << "\033[0m";
+				std::cout << "\033[1;31m" << char(toupper(result[x])) << "\033[0m";
 				x++;
 			}
 			x = 0;

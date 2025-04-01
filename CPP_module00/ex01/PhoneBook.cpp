@@ -1,20 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lortega- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/01 13:53:34 by lortega-          #+#    #+#             */
+/*   Updated: 2025/04/01 13:53:35 by lortega-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "Phonebook.hpp"
+
+#include "PhoneBook.hpp"
 #include <cstdlib>
 
 
-Phonebook::Phonebook()
+PhoneBook::PhoneBook()
 {
 	currentindex = 0;
 	Contact contacts[9];
 
 }
 
-Phonebook::~Phonebook()
+PhoneBook::~PhoneBook()
 {
 }
 
-void	Phonebook::to_uppercase(std::string &str)
+void	PhoneBook::to_uppercase(std::string &str)
 {
 	size_t i = 0;
 	while (i < str.length())
@@ -24,7 +36,7 @@ void	Phonebook::to_uppercase(std::string &str)
 	}
 }
 
-int	Phonebook::change_mode(std::string &input)
+int	PhoneBook::change_mode(std::string &input)
 {
 	to_uppercase(input);
 	if (input == "ADD" || input == "1")
@@ -34,7 +46,7 @@ int	Phonebook::change_mode(std::string &input)
 	return (0);
 }
 
-void Phonebook::mode_zero(const std::string &name)
+void PhoneBook::mode_zero(const std::string &name)
 {
 	std::cout << "+------------------------------------------------+" << std::endl;
 	std::cout << "               Welcome, " << name << "!        " << std::endl;
@@ -46,7 +58,7 @@ void Phonebook::mode_zero(const std::string &name)
 }
 
 
-bool Phonebook::get_valid_input(std::string& input)
+bool PhoneBook::get_valid_input(std::string& input)
 {
 	std::getline(std::cin, input);
 	if (input.empty())
@@ -57,7 +69,7 @@ bool Phonebook::get_valid_input(std::string& input)
     return true;
 }
 
-void	Phonebook::add_user()
+void	PhoneBook::add_user()
 {
 	if (currentindex < 9)
 	{
@@ -87,7 +99,7 @@ void	Phonebook::add_user()
 	}
 }
 
-void	Phonebook::search()
+void	PhoneBook::search()
 {
 	int	x;
 	int max;
