@@ -10,7 +10,7 @@ CC = c++
 
 CFLAG = -std=c++98 -Wall -Wextra -pedantic
 
-SOURCES = Zombie.cpp newZombie.cpp #randomChump.cpp
+SOURCES = Zombie.cpp newZombie.cpp randomChump.cpp
 
 OBJECT = $(SOURCES:.cpp=.o)
 

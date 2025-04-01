@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   randomChum.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lortega- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/01 13:55:36 by lortega-          #+#    #+#             */
-/*   Updated: 2025/04/01 13:55:40 by lortega-         ###   ########.fr       */
+/*   Created: 2025/04/01 13:55:50 by lortega-          #+#    #+#             */
+/*   Updated: 2025/04/01 13:55:53 by lortega-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie*	Zombie::newZombie(std::string strname)
+Zombie*	Zombie::randomChump(std::string strname)
 {
-	return new Zombie(strname);
+	Zombie* zombie = Zombie::newZombie(strname);
+	zombie->announce();
+	return (zombie);
 }
