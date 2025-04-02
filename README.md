@@ -1,6 +1,6 @@
 # CPP_Module_42
 
-# 1 INTRODUCCIÓN:
+# 0 INTRODUCCIÓN:
 
 Si estás aquí, es (posiblemente) porque quieres aprender a programar en C++ y ademas estás haciendo el cursus de 42. Si has llegado por error, no sigas leyendo, porque me temo que ésta no va a ser una buena lectura para un rato de aburrimiento, C++ no es el lenguaje más fácil...
 
@@ -10,7 +10,24 @@ https://www.aprendeaprogramar.com/cursos/ver.php?id=16
 
 ---> Creo que esta maravilloso como introduccióon a c++
 
-Estos proyectos tampoco son lo mas entretenido del mundo, es volver a aprender un lenguaje... bueno, juguemos un 
+Estos proyectos tampoco son lo mas entretenido del mundo, es volver a aprender un lenguaje... bueno, juguemos un poco...
+
+# 1 Pasando de C a C++
+
+¿Podemos decir que es igual pero diferente?
+
+
+### -> std::
+	es el espacio de nombres (namespace) estándar de C++. Escribo esto mientras me doy cabezazos intentando programar sin leer más que la documentación justa... Me he dado cuenta que en c++ como que todo se "define" antes de usarlo, para usar las cosas estandars usamos "std::" seguido de lo que queramos usar  por ejemplo, "string" o "cuot" ..
+
+### -> Un std::string no es un char *
+	Por parecer se parecen pero no lo son, por tanto para usar un string como char * habra que usar la funcion .c_str().
+
+### -> cuot  (std::cuot)
+	hace refencia a  "character output" (salida de caracteres). es un objeto de tipo flujo de salida que se usa para enviar datos a la consola.
+
+### -> err	(std::err)
+	Manda a terminal de forma inmediata un mensaje de error. No esta bufferizado asique sale de inmediato.
 
 # 2 CPP_module00
 
@@ -105,6 +122,7 @@ Crearemos ahora clases que si tendremos que dar memoria dinamica...
 	HumanB puede no tener siempre un arma 
 ### ex04
 	Crea un programa que reciba tres parámetros en el siguiente orden: un nombre de archivo y dos cadenas de texto, s1 y s2.
+		-> eso quiere decir que pilla argumentos
 	Se abrira el archivo se copia en un nuevo archivo llamada nombredado.replace y reemplaza cada s1 por s2
 ### ex05
 	
