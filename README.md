@@ -125,6 +125,7 @@ Crearemos ahora clases que si tendremos que dar memoria dinamica...
 		-> eso quiere decir que pilla argumentos
 	Se abrira el archivo se copia en un nuevo archivo llamada nombredado.replace y reemplaza cada s1 por s2
 ### ex05
+	Hay que crear una clase harl que manda cuatro tipos de mensajes 
 	
 		
 
