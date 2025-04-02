@@ -128,6 +128,7 @@ Crearemos ahora clases que si tendremos que dar memoria dinamica...
 	Hay que crear una clase harl que manda cuatro tipos de mensajes 
 ### ex06
 	Es como el cinco pero esta vez hay que entregarle argumentos y cambia un poco la implementacion, ahora es desde el mensaje mas bajo al mas alto.
+	Ademas, hay que hacer un bucle switch
 	
 
 		

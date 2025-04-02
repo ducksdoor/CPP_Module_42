@@ -37,18 +37,28 @@ void Harl::complain(std::string level)
 	void	(Harl::*ptr_complain[4])(void) =  
 	{&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-	bool speack = false;
 	std::string levels[4] = {"debug", "info", "warning", "error"};
 
 	int x = 0;
 	while (x < 4)
 	{
 		if (level == levels[x])
-			speack = true;
-		if (speack == true)
-			(this->*ptr_complain[x])();
+			break;
 		x++;
 	}
-	if (speack == false)
-		std::cout << std::endl << "[ Probably complaining about insignificant problems ]" << std::endl;
+	switch (x)
+	{
+		case (0):
+			(this->*ptr_complain[0])();
+		case (1):
+			(this->*ptr_complain[1])();
+		case (2):
+			(this->*ptr_complain[2])();
+		case (3):
+			(this->*ptr_complain[3])();
+			break;
+		default:
+			std::cout << std::endl << "[ Probably complaining about insignificant problems ]" << std::endl << std::endl;
+			break;
+	}
 }
