@@ -8,4 +8,5 @@ int main (void)
 	h.complain("info");
 	h.complain("warning");
 	h.complain("error");
+	h.complain("patata");
 }

@@ -41,9 +41,10 @@ void Harl::complain(std::string level)
 		if (level == levels[x])
 		{
 			(this->*ptr_complain[x])();
-			break;
+			return;
 		}
 		x++;
 	}
+	std::cout << "no exist this order" << std::endl;
 
 }

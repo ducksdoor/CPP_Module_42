@@ -52,7 +52,6 @@ int main (int argc, char **argv)
 	std::string newname;
 	std::string new_line;
 
-	newname = argv[1];
 	if (argc != 4)
 	{
 		ft_error(argc);
@@ -64,6 +63,7 @@ int main (int argc, char **argv)
 		std::cout << RED  << "Pepe says: WTF??, I don't work with empty strings except in the last position" << RESET  << std::endl;
 		return 2;
 	}
+	newname = argv[1];
 	std::ifstream inputFile(argv[1]);
 	if (!inputFile)
 	{
