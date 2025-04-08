@@ -129,7 +129,14 @@ Crearemos ahora clases que si tendremos que dar memoria dinamica...
 ### ex06
 	Es como el cinco pero esta vez hay que entregarle argumentos y cambia un poco la implementacion, ahora es desde el mensaje mas bajo al mas alto.
 	Ademas, hay que hacer un bucle switch
-	
+
+# 2 CPP_module01
+
+Con este cpp aprenderemos a definir los comparadores, por ejemplo, cuando usas un clase Patata.A = clase Patata.B que valores de patata tendran que ser copiados?
+### ex00
+	-> creamos una estructura basica con el constructor copia, el destructor, el operador = ...
+### ex01
+	-> creamos mas funciones a nuestra clase de punto fijo.
 
 		
 

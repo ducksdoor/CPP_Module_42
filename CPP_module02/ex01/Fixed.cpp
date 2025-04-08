@@ -39,11 +39,13 @@ Fixed& Fixed::operator=(const Fixed& other){
 
 int Fixed::getRawBits(void) const
 {
+	std::cout << PINK << "getRawBits member function called" << RESET << std::endl;
 	return (this->_value);
 }
 
 void Fixed::setRawBits(int const raw)
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
 
