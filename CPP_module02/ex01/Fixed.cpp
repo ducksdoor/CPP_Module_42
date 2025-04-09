@@ -62,3 +62,4 @@ std::ostream& operator<<(std::ostream& out, const Fixed& other)
 	out << other.toFloat();
 	return out;
 }
+

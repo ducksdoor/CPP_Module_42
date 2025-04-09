@@ -105,7 +105,8 @@ Fixed Fixed::operator/(const Fixed &otherFixed) const
 Fixed Fixed::operator*(const Fixed &otherFixed) const
 {
 	Fixed result;
-result._value = (static_cast<long>(_value) * otherFixed._value) >> _fractionalBits;	return (result);
+	result._value = (static_cast<long>(_value) * otherFixed._value) >> _fractionalBits;
+	return (result);
 }
 
 Fixed &Fixed::operator++()
