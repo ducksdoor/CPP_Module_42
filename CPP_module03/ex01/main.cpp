@@ -9,22 +9,23 @@ int main (void)
 
 	clapy.guardGate();
 	
-	clap.takeDamage(6);
-	clap.attack("your face");
-	clap.beRepaired(2);
-	clap.attack("your face");
-	clap.attack("your face");
-	clap.attack("your face");
-	clap.attack("your face");
-	clap.attack("your face");
-	clap.attack("your face");
-	clap.attack("your face");
-	clap.attack("your face");
-	clap.beRepaired(2);
-	clap.attack("your face");
-	clap.beRepaired(2);
-	clap.attack("your face");
-	clap.takeDamage(10);
-	clap.takeDamage(6);
+	clapy.takeDamage(6);
+	clapy.attack("your face");
+	clapy.beRepaired(2);
+
+	// clap.attack("your face");
+	// clap.attack("your face");
+	// clap.attack("your face");
+	// clap.attack("your face");
+	// clap.attack("your face");
+	// clap.attack("your face");
+	// clap.attack("your face");
+	// clap.attack("your face");
+	// clap.beRepaired(2);
+	// clap.attack("your face");
+	// clap.beRepaired(2);
+	// clap.attack("your face");
+	// clap.takeDamage(10);
+	// clap.takeDamage(6);
 
 }

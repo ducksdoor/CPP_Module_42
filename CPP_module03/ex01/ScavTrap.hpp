@@ -8,22 +8,21 @@
 #define GREEN   "\033[0;92m"
 #define BLUE    "\033[0;94m"
 #define RED    "\033[0;91m"
-#include <iostream>
+#define DARK_RED "\033[0;38;5;88m"
 
-class ScavTrap
+#include <iostream>
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
 	private:
-		std::string _name;
-		int			_hit_point;
-		int			_energy;
-		int			_atack_damage;
 
 	public:
     ScavTrap(std::string name);
     ~ScavTrap();
 	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	// void takeDamage(unsigned int amount);
+	// void beRepaired(unsigned int amount);
     void guardGate();
 };
 

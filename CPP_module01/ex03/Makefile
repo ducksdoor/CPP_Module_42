@@ -9,7 +9,7 @@ NAME = human
 
 CC = c++
 
-CFLAG = -std=c++98 -Wall -Wextra -pedantic
+CFLAG =  -Wall -Wextra -Werror -std=c++98
 
 SOURCES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 

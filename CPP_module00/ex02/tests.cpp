@@ -37,8 +37,14 @@ int		main( void ) {
 	ints_t::iterator	wit_begin	= withdrawals.begin();
 	ints_t::iterator	wit_end		= withdrawals.end();
 
+	//justo antes de account se ve las 8 creaciones
+	
 	Account::displayAccountsInfos();
+	//line 9//
+	
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	//ESTE DISPLAY del final se usa pero no se muy bien como, 
+	//						enseña los datos qye lleva encima
 
 	for ( acc_int_t it( acc_begin, dep_begin );
 		  it.first != acc_end && it.second != dep_end;
@@ -48,6 +54,7 @@ int		main( void ) {
 	}
 
 	Account::displayAccountsInfos();
+	//linea 26
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 	for ( acc_int_t it( acc_begin, wit_begin );
@@ -58,6 +65,7 @@ int		main( void ) {
 	}
 
 	Account::displayAccountsInfos();
+	//linea 43
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 	return 0;

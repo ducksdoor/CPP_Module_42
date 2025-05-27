@@ -1,7 +1,9 @@
 #include "Account.hpp"
 #include <iostream>
 #include <iomanip>
-
+#include <ctime>
+#define BLUE    "\033[34m"
+#define RESET   "\033[0m"
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -11,79 +13,118 @@ int Account::_totalNbWithdrawals = 0;
 
 int	Account::getNbAccounts( void )
 {
-    std::cout << "hola, soy getNbAccounts" << std::endl;
-    return(0);
+    return(_nbAccounts);
 }
 
 int	Account::getTotalAmount( void )
 {
-    std::cout << "hola, soy getTotalAmount" << std::endl;
-    return(0);
+    return(_totalAmount);
 }
 
 int	Account::getNbDeposits( void )
 {
-    std::cout << "hola, soy getNbDeposits" << std::endl;
-    return(0);
+    return(_totalNbDeposits);
 }
 
-int Account::getNbWithdrawals( void )
+int	Account::getNbWithdrawals( void )
 {
-    std::cout << "hola, soy getNbWithdrawal" << std::endl;
-    return(0);
-}
-void    Account::displayAccountsInfos( void )
-{
-
-    std::cout << "Soy DAI:";
-    _totalAmount = 42;
-    std::cout << "amount:" << _totalAmount << std::endl;
+    return(_totalNbWithdrawals);
 }
 
 Account::Account( int initial_deposit )
+        : _accountIndex(_nbAccounts), _amount(initial_deposit)
 {
-    _nbAccounts = initial_deposit;
-    _totalAmount = 0;
-    _totalNbDeposits = 0;
-    _totalNbWithdrawals = 0;
-
-    _accountIndex = 0;
-    _amount = 0;
-    _nbDeposits = 0;
+    _nbAccounts++;
+    _totalAmount += _amount;
     _nbWithdrawals = 0;
+    _nbDeposits = 0;
+
+    _displayTimestamp();
+	std::cout << "index:"  << BLUE << _accountIndex << RESET;
+    std::cout << ";amount:" << BLUE << _amount << RESET;
+    std::cout << ";created"<< std::endl;
+
+
 }
 Account::~Account( void )
 {
+    _displayTimestamp();
+    std::cout << "index:"  << BLUE << _accountIndex << RESET;
+    std::cout << ";amount:" << BLUE << _amount << RESET;
+	std::cout << ";closed"<< std::endl;
 
 }
-
 void	Account::makeDeposit( int deposit )
 {
-    std::cout << "hola, soy makeDeposit" << std::endl;
-     _totalAmount =  _totalAmount + deposit;
+    _displayTimestamp();
+    _nbDeposits++;
+    _totalNbDeposits++;
+    _totalAmount += deposit;
+
+    std::cout << "index:" << BLUE << _accountIndex << RESET;
+    std::cout << ";p_amount:"<< BLUE << _amount << RESET;
+    std::cout << ";deposit:"<< BLUE << deposit << RESET;
+    _amount =  _amount + deposit;
+    std::cout << ";p_amount:" << BLUE << _amount << RESET;
+    std::cout << ";nb_deposits:" << BLUE << _nbDeposits << RESET << std::endl;
 }
+
 bool	Account::makeWithdrawal( int withdrawal )
 {
-    std::cout << "hola, soy makeWithdrawal" << std::endl;
-    _totalNbWithdrawals = _totalNbWithdrawals + withdrawal;
+    _displayTimestamp();
+    std::cout << "index:" << BLUE << _accountIndex << RESET;
+    std::cout << ";p_amount:"<< BLUE << _amount << RESET;
+	if (withdrawal > _amount)
+    {
+        std::cout << ";withdrawal:refused" << std::endl;
+		return (false);
+    }
+    _totalNbWithdrawals ++;
+    _nbWithdrawals++;
+    std::cout << ";withdrawal:" << BLUE << withdrawal << RESET;
+    _amount =  _amount - withdrawal;
+    _totalAmount -= withdrawal;
+    std::cout << ";_amount:" << BLUE << _amount << RESET;
+    std::cout << ";nb_withdrawals:" << BLUE << _nbWithdrawals << RESET << std::endl;
     return(true);
 }
+
 int		Account::checkAmount( void ) const
 {
-    std::cout << "hola, soy checkAmount" << std::endl;
-    return(0);
+    _displayTimestamp();
+    std::cout << "index:" << BLUE << _accountIndex << RESET;
+    std::cout << ";amount:" << BLUE << _amount << RESET;
+    std::cout  <<";deposits:" << BLUE << _nbDeposits << RESET;
+    std::cout << ";withdrawals:" << BLUE << _nbWithdrawals << RESET << std::endl;
+    return(1);
 }
-//la fecha esta metida a capon
+
+
 void	Account::displayStatus( void ) const
 {
-    std::cout << "[19920104_091532]" << "index:" << _accountIndex << std::endl;
-//    _accountIndex = _accountIndex + 1;
+    checkAmount();
 }
 
-// void	Account::_displayTimestamp( void )
-// {
-//     _accountIndex = 0;
-//     _amount = 0;
-// }
+void    Account::displayAccountsInfos( void )
+{
+    _displayTimestamp();
+    std::cout << "accounts:" << BLUE << getNbAccounts() << RESET;
+    std::cout << ";total:" << BLUE << getTotalAmount() << RESET;
+    std::cout << ";deposits:" << BLUE << getNbDeposits() << RESET;
+    std::cout << ";withdrawals:" << BLUE << getNbWithdrawals() << RESET << std::endl;
+}
 
-//vindif arcivo1 archivo2
+
+void	Account::_displayTimestamp( void )
+{
+    //std::cout << "[19920104_091532]";
+    //u can use "real" time or "no real" time 
+	time_t		rawtime;
+	struct tm	*timeinfo;
+	char		buffer[20];
+
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+	strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S]", timeinfo);
+	std::cout << buffer << " ";
+}

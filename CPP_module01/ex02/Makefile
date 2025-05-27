@@ -8,7 +8,7 @@ NAME = data
 
 CC = c++
 
-CFLAG = -std=c++98 -Wall -Wextra -pedantic
+CFLAG =  -Wall -Wextra -Werror -std=c++98
 
 SOURCES = main.cpp
 
