@@ -17,7 +17,7 @@ int main (void)
 	int	x;
 	x = 0;
 	std::cout << "\033[32m  welcome to the garden! \033[0m" << std::endl;
-	Zombie* horde = Zombie::zombieHorde(3, "BAby");
+	Zombie* horde = Zombie::zombieHorde(5, "BAby");
 	while (x <= 5)
 	{
 		horde[x].announce();
@@ -25,7 +25,7 @@ int main (void)
 	}
 	delete[] horde;
 	
-	Zombie* campus = Zombie::zombieHorde(4, "Piscin");
+	Zombie* campus = Zombie::zombieHorde(5, "Piscin");
 	x = 0;
 	while (x <= 5)
 	{

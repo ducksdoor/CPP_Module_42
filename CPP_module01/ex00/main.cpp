@@ -20,6 +20,8 @@ int main (void)
 	zombie->announce();
 	zombie->~Zombie();
 	zombie3->~Zombie();
+	
+	
 
 	Zombie zombie2 = Zombie("berenjena");
 	zombie2.announce();

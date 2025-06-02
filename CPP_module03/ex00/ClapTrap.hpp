@@ -18,8 +18,15 @@ class ClapTrap
 		int			_attack_damage;
 
 	public:
+	
+	//canonical form 
+	ClapTrap();
+	ClapTrap(const ClapTrap& other);
+    ClapTrap& operator=(const ClapTrap& other); 
+	~ClapTrap();
+
+
     ClapTrap(std::string name);
-    ~ClapTrap();
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);

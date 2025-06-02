@@ -31,8 +31,6 @@ class Fixed
         //Operator 
             //Assignment
 		Fixed &operator=(const Fixed &other);
-			//inser
-		friend std::ostream& operator<<(std::ostream&, const Fixed& other);
             //comparasion//
 		bool operator>(const Fixed& compFixed);
 		bool operator<(const Fixed& compFixed);
@@ -56,5 +54,8 @@ class Fixed
 		static Fixed& max(Fixed& a, Fixed& b);
 		static const Fixed& max(const Fixed& a, const Fixed& b);
 };
+
+			//inser
+std::ostream& operator<<(std::ostream& out, const Fixed& other);
 
 #endif

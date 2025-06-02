@@ -20,6 +20,7 @@ Zombie::Zombie(std::string strname)
 
 Zombie::~Zombie()
 {
+	delete[] Zombie;
 	std::cout << "\033[34m" << this->name << "\033[0m" << ": "
 	<< "\033[90mdead\033[0m" << std::endl;
 }

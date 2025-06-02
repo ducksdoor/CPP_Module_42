@@ -29,10 +29,11 @@ class Fixed {
         //Operator 
             //Assig
 		Fixed &operator=(const Fixed &other);
-			//inser
-		friend std::ostream& operator<<(std::ostream&, const Fixed& other);
 
 };
+
+	//inser
+std::ostream& operator<<(std::ostream& out, const Fixed& other);
 
 #endif
 
