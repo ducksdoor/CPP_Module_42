@@ -39,5 +39,5 @@ std::string const &AMateria:: getType() const
 
 void AMateria::use(ICharacter & target)
 {
-    std::cout << _type << PINK << " has been used..." << RESET << std::endl;
+    std::cout << _type << PINK << " coudent used..." << RESET << std::endl;
 }

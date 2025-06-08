@@ -1,9 +1,9 @@
 
 #ifndef CURE_HPP
 #define CURE_HPP
-// revisado con sara! 
-#include "AMateria.hpp"
 
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Cure : public AMateria 
 {
@@ -17,7 +17,6 @@ class Cure : public AMateria
 		~Cure();
 
 		//ex03
-
 		AMateria* clone() const;
 		void use(ICharacter& target);
 };

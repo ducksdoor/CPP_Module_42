@@ -1,7 +1,7 @@
 
 #include "Ice.hpp"
 
-Ice::Ice() : _type("ice")
+Ice::Ice() : AMateria("ice")
 {
     	std::cout << BLUE << " Ice has been created" << RESET << std::endl;
 }
@@ -21,4 +21,14 @@ Ice &Ice::operator=(const Ice &other)
 Ice::~Ice()
 {
     	std::cout << BLUE << " Ice has been destroid" << RESET << std::endl;
+}
+
+void AMateria::use(ICharacter &target)
+{
+    std::cout << PINK << "* shoots an ice bolt at " << target.getName() << " *" << RESET << std::endl;
+}
+
+AMateria *Ice::clone() const
+{
+    return new Ice(*this);
 }
